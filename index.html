@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Java Developer Portfolio - Shifa Siddiqui">
+  <meta name="author" content="Shifa Siddiqui">
+  <meta name="keywords" content="Java, Spring Boot, Portfolio, Developer, Projects">
+  <title>Shifa Siddiqui - Portfolio</title>
+
+  <!-- Fonts & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- AOS Scroll Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <script src="main.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #3b82f6;
+      transition: width 0.3s;
+    }
+    nav a:hover::after { width: 100%; }
+    .gradient-text {
+      background: linear-gradient(to right, #2563eb, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 8px rgba(147, 51, 234, 0.3);
+    }
+    .project-card, .info-card {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(14px);
+      padding: 1.75rem;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .project-card:hover, .info-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .icon-img {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 8px;
+    }
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 9999px;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 50;
+    }
+  </style>
+  <link rel="icon" href="https://img.icons8.com/fluency/48/code.png" type="image/png">
+</head>
+<body class="text-gray-900">
+  <div style="position: fixed;top: 0;left: 0;right: 0;bottom: 0;background: rgba(255, 255, 255, 0.2);z-index: -1;backdrop-filter: blur(2px);"></div>
+
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" class="fixed bottom-6 left-6 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg z-50 hover:bg-gray-700 transition">
+    🌙 Dark Mode
+  </button>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top">⬆ Top</button>
+
+  <!-- WhatsApp Contact -->
+  <a href="https://wa.me/919372355141" target="_blank" class="fixed bottom-6 right-6 bg-green-500 p-3 rounded-full shadow-lg hover:scale-110 transition border border-white">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="w-6 h-6" alt="WhatsApp" />
+  </a>
+  
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold gradient-text">Shifa Siddiqui</h1>
+      <ul class="flex space-x-4 text-gray-900 text-sm md:text-base items-center">
+        <li><a href="#home" class="hover:text-blue-600 relative">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600 relative">About</a></li>
+        <li><a href="#skills" class="hover:text-blue-600 relative">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 relative">Projects</a></li>
+        <li><a href="#experience" class="hover:text-blue-600 relative">Experience</a></li>
+        <li><a href="#education" class="hover:text-blue-600 relative">Education</a></li>
+        <li><a href="#contact" class="hover:text-blue-600 relative">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="px-4 py-16 space-y-28">
+
+    <section id="home" class="text-center" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-bold text-blue-700 mb-4">Hi, I'm Shifa Siddiqui</h1>
+      <div id="typewriter" class="text-xl text-purple-700 mt-2 h-8"></div>
+      <div class="mt-6 space-x-4">
+        <a href="#projects" class="bg-blue-600 px-6 py-2 rounded-full text-white hover:bg-blue-700 transition">Projects</a>
+        <a href="Shifa_Resume.pdf" download class="border border-blue-500 px-6 py-2 rounded-full text-blue-600 hover:bg-blue-100 transition">Download Resume</a>
+      </div>
+    </section>
+
+    <section id="about" class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
+      <img src="https://img.freepik.com/premium-photo/uses-laptop-writes-message-client-woman-formal-dress-works-cafe_283470-3039.jpg?w=740"
+           alt="Shifa using laptop"
+           class="w-full max-w-sm rounded-lg shadow">
+      <div>
+        <h2 class="text-4xl font-bold gradient-text mb-6">About Me</h2>
+        <p class="text-gray-900 text-lg leading-relaxed">
+          I'm <strong>Shifa Siddiqui</strong>, a passionate Java Developer with a strong background in backend development, clean code architecture, and modern frameworks like Spring Boot. I love turning ideas into practical, scalable, and efficient applications.
+        </p>
+      </div>
+    </section>
+
+    <!---Skills-->
+
+    <section id="skills" class="max-w-5xl mx-auto text-center" data-aos="zoom-in">
+      <h2 class="text-4xl font-bold gradient-text mb-8">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-gray-900 text-base px-4">
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/><span>Java</span></div>
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"/><span>Spring Boot</span></div>
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"/><span>MongoDB</span></div>
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/><span>MySQL</span></div>
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/><span>HTML5</span></div>
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/><span>CSS3</span></div>
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/><span>GitHub</span></div>
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/><span>Git</span></div>
+        <div><img class="icon-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"/><span>VS Code</span></div>
+<div>
+  <img class="icon-img" src="https://cdn-icons-png.flaticon.com/512/9191/9191537.png" alt="REST APIs" />
+  <span>REST APIs</span>
+</div>
+</div>
+
+      </div>
+    </section>
+
+ 
+    <!-- Projects -->
+  <section id="projects" class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-bold gradient-text mb-8">Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+
+    <a href="https://github.com/shi101-hash/Expense_Tracker" target="_blank" class="project-card block hover:no-underline">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240721201626/exp.gif"
+     alt="Expense Tracker App"
+     class="w-full h-48 object-cover rounded-lg mb-3" />  
+           <h3 class="text-xl font-semibold text-blue-700">Expense Tracker</h3>
+      <p class="mb-2">Manage personal finances with login, budgeting, and MongoDB storage.</p>
+    </a>
+
+    <a href="https://github.com/shi101-hash/Voting_system" target="_blank" class="project-card block hover:no-underline">
+      <img src="https://media.licdn.com/dms/image/v2/D4D12AQFd_w3JrsGatA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1734171720894?e=2147483647&v=beta&t=F6jmITDaqr9rYG8qEPkbzkIcTC1Y0w10PTTPF34Fop8" alt="Voting System" class="w-full h-48 object-cover rounded-lg mb-3" />
+      <h3 class="text-xl font-semibold text-blue-700">E-Voting System</h3>
+      <p class="mb-2">Secure web app for casting and managing votes online.</p>
+    </a>
+
+    <a href="https://github.com/shi101-hash/TaskMaster" target="_blank" class="project-card block hover:no-underline">
+      <img src="https://projectsly.com/images/task-management-system-screenshot-1.png?v=1691124479409199525"
+           alt="TaskMaster App"
+           class="w-full h-48 object-cover rounded-lg mb-3" />
+      <h3 class="text-xl font-semibold text-blue-700">TaskMaster</h3>
+      <p class="mb-2">Task assignment and tracking with user uploads and admin control.</p>
+    </a>
+
+  </div>
+</section>
+
+
+<!-----Experience  section-->
+
+<section id="experience" class="max-w-5xl mx-auto text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-bold gradient-text mb-8">Experience</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+    
+    <div class="info-card">
+      <div class="flex items-center justify-center mb-3">
+        <h3 class="text-xl font-semibold text-blue-700">Web Developer</h3>
+      </div>
+      <p class="text-sm text-gray-700 font-medium">Digital Blue Ocean <span class="block text-xs text-gray-500">Jan 2025 – Apr 2025</span></p>
+      <p class="mt-2 text-gray-800">Worked on frontend and backend integration using HTML, CSS, and Java. Built responsive web apps with clean UI and efficient backend workflows.</p>
+    </div>
+
+    <div class="info-card">
+      <div class="flex items-center justify-center mb-3">
+        <h3 class="text-xl font-semibold text-blue-700">Java Developer Intern</h3>
+      </div>
+      <p class="text-sm text-gray-700 font-medium">VirtuNexa <span class="block text-xs text-gray-500">Jan 2025 – Feb 2025</span></p>
+      <p class="mt-2 text-gray-800">Developed backend modules using Spring Boot, implemented RESTful APIs, and collaborated in agile sprint planning for real-world projects.</p>
+    </div>
+
+  </div>
+
+
+<!----Education-->
+
+
+  <section id="education" class="max-w-5xl mx-auto px-4 py-16" data-aos="fade-up">
+  <h2 class="text-4xl font-bold gradient-text text-center mb-12">Education</h2>
+  <div class="relative border-l-4 border-blue-600 pl-8 space-y-10">
+
+    <div class="relative">
+      <div class="absolute -left-4 top-1.5 w-4 h-4 bg-blue-600 rounded-full border-4 border-white"></div>
+      <h3 class="text-xl font-semibold text-blue-700">MCA - CSM University, Mumbai</h3>
+      <p class="text-sm text-gray-600 mb-1">2023–2025</p>
+      <p class="text-gray-800">CGPA: <span class="font-semibold">8.79</span></p>
+    </div>
+
+    <div class="relative">
+      <div class="absolute -left-4 top-1.5 w-4 h-4 bg-purple-600 rounded-full border-4 border-white"></div>
+      <h3 class="text-xl font-semibold text-purple-700">BSc-IT - L.S. Raheja College, Mumbai</h3>
+      <p class="text-sm text-gray-600 mb-1">2020–2023</p>
+      <p class="text-gray-800">CGPA: <span class="font-semibold">8.77</span></p>
+    </div>
+
+    <div class="relative">
+      <div class="absolute -left-4 top-1.5 w-4 h-4 bg-green-600 rounded-full border-4 border-white"></div>
+      <h3 class="text-xl font-semibold text-green-700">HSC - Elia Sarwat College</h3>
+      <p class="text-sm text-gray-600">2018–2020</p>
+    </div>
+
+    <div class="relative">
+      <div class="absolute -left-4 top-1.5 w-4 h-4 bg-yellow-500 rounded-full border-4 border-white"></div>
+      <h3 class="text-xl font-semibold text-yellow-700">SSC - Sadhana Education Society</h3>
+      <p class="text-sm text-gray-600">2018</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="max-w-5xl mx-auto px-4 py-20" data-aos="fade-up">
+  <h2 class="text-4xl font-bold gradient-text text-center mb-12">Contact Me</h2>
+
+  <div class="max-w-3xl mx-auto bg-white bg-opacity-90 backdrop-blur-lg rounded-2xl shadow-lg p-8 space-y-6 text-center">
+<p class="text-lg text-gray-700 font-medium">
+  I'm always open to discussing new opportunities, collaborations, or how I can contribute to your team’s success.
+</p>
+    <div class="grid md:grid-cols-2 gap-6 text-left text-base">
+      <div class="space-y-3">
+        <p><strong>Email:</strong>  
+          <a href="mailto:Siddiquishifa101@gmail.com" class="text-blue-600 hover:underline">Siddiquishifa101@gmail.com</a>
+        </p>
+        <p><strong>Phone:</strong>  
+          <a href="tel:+919372355141" class="text-blue-600 hover:underline">+91-9372355141</a>
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <p><strong>LinkedIn:</strong>  
+          <a href="https://linkedin.com/in/shifa-siddiqui-3a8597229" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/shifa</a>
+        </p>
+        <p><strong>GitHub:</strong>  
+          <a href="https://github.com/shi101-hash" target="_blank" class="text-blue-600 hover:underline">github.com/shi101-hash</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8">
+      <a href="mailto:Siddiquishifa101@gmail.com"
+         class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition text-lg shadow-md">
+        Send Message
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+   const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Dark Mode Toggle Label
+    const themeToggle = document.getElementById('theme-toggle');
+    let darkMode = false;
+    themeToggle.addEventListener('click', () => {
+      darkMode = !darkMode;
+      document.body.classList.toggle('bg-gray-900');
+      document.body.classList.toggle('text-white');
+      themeToggle.textContent = darkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+</script>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px rgba(147, 51, 234, 0.3);
+  }
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+    border: 2px solid #3b82f6;
+  }
+</style>
+
+
+
+    <!-- Continue your experience, education, and contact sections here as you had before... -->
+
+  </main>
+
+  <footer class="bg-white text-center py-6 text-sm text-gray-700">
+    <p>© 2025 Shifa Siddiqui · Java Developer · Mumbai, India</p>
+  </footer>
+
+  <!-- AOS Scroll Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
